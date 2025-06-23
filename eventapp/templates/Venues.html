@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeo5b1j6D9CksEo6nY9x0Rz5zs82gktEV61HhftF6ab1tftF" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-QmXCbxbQFLRnp80Wf0jjRgN0vWQeLwlnsLDzRLg9OBob2o3Azmchz5lCmHkSrEVP" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/venue.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 style="text-shadow: 2px 2px 4px #000000;">Best Event & Wedding Venues in Kerala</h1>
+    <p style="text-shadow: 2px 2px 4px #000000;">
+      Looking for a perfect venue in Kerala? Our updated list features the most stunning locations and venue types,
+      from backwater and beach resorts to banquet halls and traditional local mandapas. Find your dream event venue in Kerala today!
+    </p>
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-quote"><i class="fas fa-phone"></i> Get Quote</a>
+       <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp on us</button> 
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="venue-section">
+    <div class="content">
+      <div class="text-area">
+        <h1>Venues in Kerala: A Fairytale Setting for Events</h1>
+        <p><strong class="highlight">Melodia Event Management</strong> introduces Kerala’s venues, offering lush greenery, breathtaking beauty, and world-class amenities. These venues provide modern facilities and luxurious settings, making Kerala the perfect location for events.</p>
+        <p>Find the best event and wedding venues in Kerala with Melodia Event Management. We offer expert event management services for luxurious, traditional, and modern weddings, as well as corporate and private parties. Discover 300+ event venues with stunning locations. Use the smart filters below to explore and book your dream event and wedding venues in Kerala by location and venue type now!</p>
+      </div>
+      <div class="image-area">
+        <img src="{% static 'images/outdoor-wedding-venues-.jpeg' %}" alt="Wedding Celebration">
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn">Filter Venue List</button>
+      <select class="dropdown">
+        <option selected>Select Venue Location</option>
+        <option selected>Cascadia Resort calicut</option>
+        <option selected>Muroe lake kollam</option>
+        <option selected>Select Venue Location</option>
+        <option selected>forest view vayanadu</option>
+        <option selected>little flower idukki</option>
+        <option selected>Select Venue Location</option>
+      </select>
+      <select class="dropdown">
+        <option selected>Select Venue Type</option>
+      </select>
+      <input type="text" class="search-box" placeholder="Search Venue/Location...">
+    </div>
+</section>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="{% static 'images/cascadia1.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">Cascadia Resort In Cherukulam, Calicut</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> kochi, Calicut</p>
+        <div class="card-buttons">
+         <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+         <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/eventcentere1.jpeg'%}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">Event centere</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Aryand,trivandrum</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+         <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+     <div class="card">
+      <img src="{% static 'images/munroe1.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">Muroe lake kollam</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Cherukulam, kollam</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/ashokatower1.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">Asoka tower calicut</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Thrissur</p>
+        <div class="card-buttons">
+           <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+     <div class="card">
+      <img src="{% static 'images/forestresortview1.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">forestview resort</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i>wayanad ,keralat</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+          <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate for more cards -->
+    <div class="card">
+      <img src="{% static 'images/littleflower.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">little flower</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> chennai,Tamilnadu</p>
+        <div class="card-buttons">
+           <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+     <div class="card">
+      <img src="{% static 'images/beachview2.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">Green valley</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> kuttandu, Alapy</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachview3.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">Blue whale</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> North cliff, varkala</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+     <div class="card">
+      <img src="{% static 'images/valleyhome.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">valley homes</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> wagamon, idukki</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+           <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate for more cards -->
+    <div class="card">
+      <img src="{% static 'images/mountain2.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">Bluepool</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Kadalundi, Calicut</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+          <button class="btn whatsapp" onclick="window.open('https:/wa.me/917510860445?text=Hi%2C%20I%20am%20interested%20in%20your%20event', '_blank')">
+          <i class="fab fa-whatsapp"></i> Whatsapp Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
+     <div class="card">
+      <img src="{% static 'images/lakeresort4.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <h3 class="title">lakelikey</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> kashmir</p>
+        <div class="card-buttons">
+            <button class="btn request" onclick="openRequestModal()">
+          <i class="fas fa-edit"></i> Request Pricing
+         </button>
+          <button class="btn whatsapp"><i class="fab fa-whatsapp"></i> Whatsapp Enquiry</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate for more cards -->
+    <div class="card">
+      <img src="{% static 'images/poolresort.jpeg' %}" alt="Resort" class="card-image" />
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <h3 class="title">Tarang Farm House Calicut</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Kadalundi, Calicut</p>
+        <div class="card-buttons">
+        <button class="btn request" onclick="openRequestModal('{{ venue.title }}')">
+         <i class="fas fa-edit"></i> Request Pricing
+         </button>
+         <button class="btn whatsapp"><i class="fab fa-whatsapp"></i> Whatsapp Enquiry</button>
+        </div>
+      </div>
+    </div>
+
+ <!-- Modal (place at end of body in your Django template) -->
+<div id="pricingModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">×</span>
+    <h3>MELODIA EVENTS</h3>
+    <h2>Request Pricing</h2>
+    <p>Fill this form and we will contact you shortly. All information will be treated confidentially.</p>
+    
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="modal-grid">
+        <input type="text" name="name" placeholder="Full Name *" required />
+        <input type="tel" name="phone" placeholder="Phone Number *" required />
+        <input type="email" name="email" placeholder="Email Address" />
+        <input type="date" name="function_date" required />
+        <input type="number" name="guests" placeholder="Number of Guests" />
+        <input type="number" name="rooms" placeholder="Number of Rooms" />
+
+        <div class="radio-group">
+          <label>Function Type *</label><br>
+          <input type="radio" name="type" value="wedding" /> Wedding
+          <input type="radio" name="type" value="other" /> Other Events
+        </div>
+
+        <div class="radio-group">
+          <label>Function Time *</label><br>
+          <input type="radio" name="time" value="day" /> Day
+          <input type="radio" name="time" value="evening" /> Evening
+        </div>
+      </div>
+      <button class="modal-button" type="submit">Check Availability & Prices</button>
+    </form>
+  </div>
+ </div>
+</div>
+  <footer class="custom-footer">
+  <div class="footer-overlay">
+    <div class="footer-container">
+      <h1 style="text-align: center;"> Melodia Event Management</h1>
+      <p>
+        Planning a full event has never been easier! Melodia® Event Management, an ISO 9001:2015 Certified Event Management Company based in Kerala state, India, offers a wide range of services to make your events stress-free and memorable across Kerala. From premium corporate events and destination wedding planning to small-scale birthday parties and private gatherings, you can be sure we have it all covered. With offices in Kochi, Thrissur, Calicut, and Trivandrum, we also specialize in venue selections, booking, and hospitality services. We primarily serve Keralites, Malayalees, and those looking to plan destination events in Kerala. We exclusively operate within Kerala. Whether you are planning a destination wedding event or a local celebration in Kerala, India, Melodia® is here to help.
+      </p>
+      <div class="footer-column">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Venues</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SERVICES</h3>
+        <ul>
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Wedding Planner</a></li>
+          <li><a href="#">Music & Entertainment</a></li>
+          <li><a href="#">Private Parties</a></li>
+          <li><a href="#">Destination Wedding</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>OTHER LINKS</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cancellation and Refund Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>CONTACT INFO</h3>
+        <p>Melodia Event Management, T V Center,<br>
+          Kakkanad, Kochi, Kerala 682037</p>
+        <p>Melodia Event Management, Flamon Complex,<br>
+          Main Rd, Kuriachira, Thrissur, Kerala 680006</p>
+        <p>Melodia Event Management, Door No:VP 22/152ABC,<br>
+          Vazhakkad Panchayath, Oorkadavu, Po, Oorkadav, Akkod, Kozhikode, Kerala 673640</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="contact-info">
+        <span>&#9742; +91-859-001-0011</span>
+        <span>&#9993; melodiaeventmanagement@gmail.com</span>
+      </div>
+    </div>
+  </div>
+</footer>
+{% block extra_js %}
+
+<script>
+  function openRequestModal(venueName) {
+    const modal = document.getElementById("pricingModal");
+    if (modal) {
+      modal.style.display = "block";
+      document.getElementById("venueNameInput").value = venueName;
+    }
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("pricingModal");
+    if (modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+{% endblock %}
+{% endblock %}
+

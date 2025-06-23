@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Beach wedding{% endblock %}
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeo5b1j6D9CksEo6nY9x0Rz5zs82gktEV61HhftF6ab1tftF" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{% static 'css/wedding.css' %}">
+
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="main-content">
+    <div class="form-container">
+      <h2>Book Your Wedding</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <select>
+          <option>Select Package</option>
+          <option>Traditional Wedding</option>
+          <option>Beach Wedding</option>
+          <option>Luxury Wedding</option>
+        </select>
+        <textarea placeholder="Any Special Requests?" rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+
+  <!-- Wedding Event Cards -->
+  <div class="cards-container">
+    <div class="card">
+      <img src="{% static 'images/beachwed1.jpeg' %}" alt="Traditional Wedding">
+      <div class="card-content">
+        <h3>Traditional Wedding</h3>
+        <p>Celebrate your big day with cultural traditions, vibrant attire, and unforgettable moments.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed2.jpeg' %}" alt="Beach Wedding">
+      <div class="card-content">
+        <h3>Beach Wedding</h3>
+        <p>A dreamy wedding by the sea with golden sands, crashing waves, and a romantic sunset backdrop.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed3.jpeg' %}"alt="Luxury Wedding">
+      <div class="card-content">
+        <h3>Luxury Wedding</h3>
+        <p>Experience premium décor, five-star venues, gourmet cuisine, and luxury services tailored for you.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed4.jpeg' %}"alt="Garden Wedding">
+      <div class="card-content">
+        <h3>Garden Wedding</h3>
+        <p>Say "I do" amidst blooming flowers, fairy lights, and nature’s charm in a beautiful garden setup.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed5.jpeg' %}" alt="Traditional Wedding">
+      <div class="card-content">
+        <h3>Traditional Wedding</h3>
+        <p>Celebrate your big day with cultural traditions, vibrant attire, and unforgettable moments.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed6.jpeg' %}" alt="Beach Wedding">
+      <div class="card-content">
+        <h3>Beach Wedding</h3>
+        <p>A dreamy wedding by the sea with golden sands, crashing waves, and a romantic sunset backdrop.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed7.jpeg' %}"alt="Luxury Wedding">
+      <div class="card-content">
+        <h3>Luxury Wedding</h3>
+        <p>Experience premium décor, five-star venues, gourmet cuisine, and luxury services tailored for you.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'images/beachwed8.jpeg' %}"alt="Garden Wedding">
+      <div class="card-content">
+        <h3>Garden Wedding</h3>
+        <p>Say "I do" amidst blooming flowers, fairy lights, and nature’s charm in a beautiful garden setup.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    
+  </div>
+  
+
+{% endblock %}
+

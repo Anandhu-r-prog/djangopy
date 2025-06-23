@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.booking-details {
+  padding: 3rem;
+}
+
+.booking-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.booking-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.booking-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.booking-info {
+  flex: 2;
+}
+
+.booking-info h2 {
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.booking-info p {
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.star-rating {
+  color: gold;
+  font-size: 18px;
+}
+
+.coordinators {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.btn-book {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+.booking-detail-card {
+  max-width: 900px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.card-body h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text, .card-body p {
+  font-size: 1rem;
+  color: #555;
+}

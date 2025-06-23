@@ -1,0 +1,44 @@
+<!-- templates/suggestion.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suggestion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #483042;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .suggestion-container {
+            max-width: 800px;
+            margin: 80px auto;
+            background: #5b3f51;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .btn-submit {
+            background-color: #7b4bcc;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="suggestion-container">
+        <h2 class="text-center">Create your Suggestion</h2>
+        <form method="post" action="{% url 'suggest' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center">
+                <button type="submit" class="btn btn-submit">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

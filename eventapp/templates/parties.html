@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Private Parties | Melodia{% endblock %}
+{% block content %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/parties.css' %}" />
+{% endblock extra_css %}
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Private Parties at <span>Melodia</span></h1>
+      <p>Make your moments magical with our beautifully curated private events!</p>
+      <a href="#gallery" class="btn">Explore Gallery</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Why Choose Melodia?</h2>
+    <p>
+      At Melodia, we specialize in turning your special occasions into unforgettable memories.
+      From birthday bashes to anniversary celebrations, our private party packages are
+      designed with elegance, style, and joy. Our dedicated team ensures a seamless and personalized experience.
+    </p>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <h2>Our Event Moments</h2>
+    <div class="gallery">
+      {% for i in image_range %}
+       <img src="{% static 'images/private' %}{{ i }}.jpeg" alt="Party {{ i }}" class="gallery-img" onclick="openLightbox(this.src)">
+      {% endfor %}
+
+    </div>
+  </section>
+
+  <section class="contact-cta">
+    <h2>Plan Your Private Party with Us!</h2>
+    <p>Contact us now to reserve your date and customize your experience at Melodia.</p>
+    <a href="{% url 'contact' %}" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Melodia</h3>
+        <p>Creating unforgettable memories with style and passion.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Events</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: info@melodiaevents.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <div class="footer-socials">
+          <a href="#"><img src="{% static 'images/icons/facebook.png' %}" alt="Facebook" /></a>
+          <a href="#"><img src="{% static 'images/icons/instagram.png' %}" alt="Instagram" /></a>
+          <a href="#"><img src="{% static 'images/icons/twitter.png' %}" alt="Twitter" /></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Melodia Events. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".nav a");
+    links.forEach(link => {
+      link.style.color = "#FFD700";
+    });
+  });
+
+
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    // Scroll reveal animation
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, options);
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
+{% endblock %}

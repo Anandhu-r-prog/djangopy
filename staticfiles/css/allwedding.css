@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdf7;
+  color: #333;
+}
+h1{
+    text-shadow: blue 1px 1px 2px;
+    font-family: 'Segoe UI', sans-serif;
+}
+h2{
+    text-shadow: darkblue 1px 1px 2px;
+    font-family: 'Segoe UI', sans-serif;
+    font-style: oblique;
+}
+
+.wedding-hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+.wedding-hero h1 {
+  font-size: 3em;
+  color: #c94f4f;
+}
+.wedding-hero span {
+  color: #ff7f50;
+}
+.wedding-hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.wedding-content {
+  padding: 40px 10%;
+}
+.event-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+.event-block img {
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.description {
+  width: 50%;
+}
+.description h2 {
+  color: #d76d77;
+  margin-bottom: 10px;
+}
+.description p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Slider Styles */
+.slider-gallery {
+  padding: 30px 0;
+  background: #fff4e6;
+  text-align: center;
+}
+.slider-gallery h2 {
+  margin-bottom: 20px;
+  color: #e07a5f;
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+.slider-container img {
+  width: 300px;
+  height: auto;
+  margin: 0 10px;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.slider-container {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-container img {
+  width: 300px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/Servicemain.css' %}">
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<div class="carousel-background">
+    <div class="overlay">
+        <div class="animated-heading">
+            <h1 class="service-name">Welcome to Our Services</h1>
+            <p class="service-sub">Experience Excellence in Every Event</p>
+        </div>
+    </div>
+</div>
+
+<!-- You can add your service highlights or intro content here -->
+
+<!-- Footer -->
+
+
+<footer class="main-footer">
+  <div class="footer-overlay">
+    <div class="footer-container">
+      <div class="footer-col about">
+        <p>
+          Planning an unforgettable event? We're here to help. Anandhu Event Management offers premier services like weddings, beach ceremonies, parties, and conferences across Kerala.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul>
+          <li>Beach Weddings</li>
+          <li>Weddings</li>
+          <li>Private Parties</li>
+          <li>Music Parties</li>
+          <li>Conference Meetings</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><strong>Name:</strong> Anandhu R</p>
+        <p><strong>Phone:</strong> <a href="tel:+917510860445">+91 7510860445</a></p>
+        <p><strong>Email:</strong> <a href="mailto:anandhur0426@gmail.com">anandhur0426@gmail.com</a></p>
+        <div class="social-icons">
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/917510860445" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Anandhu Event Management. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

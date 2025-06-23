@@ -1,0 +1,140 @@
+/* Carousel background */
+.carousel-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: carousel 10s infinite alternate;
+}
+
+@keyframes carousel {
+    0% { background-image: url('../images/wedding.jpeg'); }
+    25% { background-image: url('../images/Beachwed7.jpeg'); }
+    50% { background-image: url('../images/musicnight.jpeg'); }
+    75% { background-image: url('../images/Beachwed7.jpeg'); }
+    100% { background-image: url('../images/food.jpeg'); }
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Animated text */
+.animated-heading {
+    text-align: center;
+    color: #fff;
+}
+
+.service-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: fadeInDown 2s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.service-sub {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-out 1s;
+    color: #eee;
+}
+
+/* Fade animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer Styling */
+
+.main-footer {
+  background: url('service.jpeg') no-repeat center center/cover;
+  position: relative;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 60px 20px 20px;
+}
+
+.footer-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* transparent dark background */
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 250px;
+  margin: 20px;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.about p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid #444;
+}

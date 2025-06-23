@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeo5b1j6D9CksEo6nY9x0Rz5zs82gktEV61HhftF6ab1tftF" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock extra_css %}
+
+
+
+{% block content %}
+<style>
+.mybutton {
+  background-color: darkblue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Chat Window */
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chat-header {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+
+.chat-input button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  justify-self: center;
+}
+.chat-bubble {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+.user {
+  background-color: #d1ecf1;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.bot {
+  background-color: #f8d7da;
+  align-self: flex-start;
+  margin-right: auto;
+}
+</style>
+
+<!-- Chat Icon -->
+<button class="chat-toggle" onclick="toggleChat()">💬</button>
+
+<!-- Chat Box -->
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Ask Us Anything!</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type your message..." onkeydown="handleKey(event)" />
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<script>
+let responses = [
+  "🎉 We specialize in organizing private parties tailored to your theme!",
+  "💼 Full event planning includes venue booking, catering, and decorations.",
+  "📸 Need photographers or entertainers? We’ve got you covered!",
+  "if you want an additonal information follow up on whatsapp! (https://wa.me/7510860445)",
+  "🎈 We can organize surprise birthday parties, anniversaries, and more!",
+  "🗓️ Bookings are open! Tell us your date and we'll plan everything.",
+  "✅ Want a hassle-free wedding or party? Melodia handles everything!",
+];
+
+function toggleChat() {
+  const chatBox = document.getElementById("chatBox");
+  chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+  chatBox.style.flexDirection = "column";
+}
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  addMessage(msg, "user");
+  input.value = "";
+
+  // Auto response after 1 second
+  setTimeout(() => {
+    const botReply = responses[Math.floor(Math.random() * responses.length)];
+    addMessage(botReply, "bot");
+  }, 1000);
+}
+
+function addMessage(text, sender) {
+  const msgDiv = document.createElement("div");
+  msgDiv.className = `chat-bubble ${sender}`;
+  msgDiv.innerText = text;
+  document.getElementById("chatMessages").appendChild(msgDiv);
+  msgDiv.scrollIntoView({ behavior: "smooth" });
+}
+
+function handleKey(event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+}
+</script>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <p>Have a question or want to plan your next big event with us? We're here to help!</p>
+    
+    <div class="contact-content">
+      
+      <div class="contact-form">
+        <form method="POST" action="{% url 'suggest' %}">
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+      
+      
+      <div class="contact-info">
+        <h3>Reach Us At</h3>
+        <p><strong>Phone:</strong> +91-7510860445</p>
+        <p><strong>Email:</strong> melodiaeventmanagement@gmail.com</p>
+        <p><strong>Locations:</strong></p>
+        <ul>
+          <li>Kakkanad, Kochi, Kerala 682037</li>
+          <li>Kuriachira, Thrissur, Kerala 680006</li>
+          <li>Vazhakkad Panchayath, Kozhikode, Kerala 673640</li>
+          <li>Vazhuthakkad Panchayath, Trivandrum, Kerala 695312</li>
+        </ul>
+        <button class="mybutton" href="" > MESSAGE US </button>
+      </div>
+    </div>
+    
+    
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div> 
+ <div class="branches">
+  <div class="branch">
+    <h3>THRISSUR BRANCH</h3>
+    <p>Melodia Event Management,<br>Flamon Complex, Kuriacihra,<br>Thrissur, Kerala, 680006</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=YOUR_THRISSUR_MAP_EMBED_LINK" 
+      width="100%" height="250" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="branch">
+    <h3>COCHIN BRANCH</h3>
+    <p>Melodia Event Management,<br>T V Center, Kakkanad, Kochi,<br>Kerala, 682037</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=YOUR_COCHIN_MAP_EMBED_LINK" 
+      width="100%" height="250" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+
+    <div class="branch">
+      <h3>CALICUT BRANCH</h3>
+      <p>Melodia Event Management,<br>Door No: VP 22/152ABC, Vazhakkad Panchayath,
+        Oorkadavu, Po, Akkod, Kozhikode, Kerala 673640</p>
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=YOUR_COCHIN_MAP_EMBED_LINK" 
+      width="100%" height="250" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      </div>
+         <div class="branch">
+      <h3>TRIVANDRUM BRANCH</h3>
+      <p>Melodia Event Management,<br>Door No: VP 22/152ABC, Vazhuthakkad Panchayath,
+        puthuppalli po, TrivandrumKerala 695312</p>
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=YOUR_COCHIN_MAP_EMBED_LINK" 
+      width="100%" height="250" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+     </iframe>
+    </div>
+   </div>
+  </section>
+  
+  
+  <footer class="custom-footer">
+    <div class="footer-overlay">
+      <div class="footer-container">
+        
+        <h1 style="text-align: center;"> melodia Event Management</h1>
+        <p>Planning a full event has never been easier! Melodia® Event Management ...</p>
+        <div class="footer-column">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Venues</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>SERVICES</h3>
+          <ul>
+            <li><a href="#">Corporate Events</a></li>
+            <li><a href="#">Wedding Planner</a></li>
+            <li><a href="#">Music & Entertainment</a></li>
+            <li><a href="#">Private Parties</a></li>
+            <li><a href="#">Destination Wedding</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>OTHER LINKS</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cancellation and Refund Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>CONTACT INFO</h3>
+          <p>Melodia Event Management, T V Center, Kakkanad, Kochi, Kerala 682037</p>
+          <p>... (other addresses) ...</p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="contact-info">
+          <span>&#9742; +91-859-001-0011</span>
+          <span>&#9993; melodiaeventmanagement@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+  {% block extra_js %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-QmXCbxbQFLRnp80Wf0jjRgN0vWQeLwlnsLDzRLg9OBob2o3Azmchz5lCmHkSrEVP" crossorigin="anonymous"></script>
+
+{% endblock extra_js %}

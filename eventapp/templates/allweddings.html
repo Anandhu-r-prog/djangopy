@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Private Parties | Melodia{% endblock %}
+{% block content %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/allwedding.css' %}">
+  {% endblock extra_css %}
+</head>
+<body>
+
+<section class="wedding-hero">
+  <h1>Dream Weddings at <span>Melodia</span></h1>
+  <p>Create unforgettable moments with elegance, beauty, and joy.</p>
+</section>
+
+<section class="wedding-content">
+  <div class="event-block">
+    <img src="{% static 'images/wedding.jpeg' %}" alt="Wedding 1">
+    <div class="description">
+      <h2>Elegant Garden Weddings</h2>
+      <p>Our garden weddings bring nature and celebration together with stunning floral decor, music, and ambiance that touches hearts.</p>
+    </div>
+  </div>
+
+  <div class="event-block">
+    <img src="{% static 'images/wedding2.jpeg' %}" alt="Wedding 2">
+    <div class="description">
+      <h2>Indoor Royal Theme</h2>
+      <p>Step into a royal setting where every detail is curated to perfection—golden backdrops, candle lights, and a touch of tradition.</p>
+    </div>
+  </div>
+
+  <div class="event-block">
+    <img src="{% static 'images/wedding3.jpeg' %}" alt="Wedding 3">
+    <div class="description">
+      <h2>Beachside Ceremonies</h2>
+      <p>Celebrate love with the waves as your witness. Our beachside weddings offer sunset views, seaside decor, and ocean vibes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slider-gallery">
+  <h2>More Wedding Moments</h2>
+  <div class="slider-container" id="slider">
+    <img src="{% static 'images/wedding2.jpeg' %}" alt="Slide 1">
+    <img src="{% static 'images/wedding3.jpeg' %}" alt="Slide 3">
+    <img src="{% static 'images/wedding3.jpeg' %}" alt="Slide 3">
+    <img src="{% static 'images/wedding6.jpeg' %}" alt="Slide 4">
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Melodia Events | Crafted with ♥ by Melodia Team</p>
+</footer>
+
+<script>
+  const slider = document.getElementById("slider");
+  let scrollAmount = 0;
+
+  // Duplicate images for seamless scrolling
+  slider.innerHTML += slider.innerHTML;
+
+  function autoScroll() {
+    scrollAmount += 2; // Adjust speed here
+    if (scrollAmount >= slider.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+    slider.scrollLeft = scrollAmount;
+    requestAnimationFrame(autoScroll);
+  }
+
+  autoScroll();
+</script>
+
+
+</body>
+</html>
+{% endblock %}

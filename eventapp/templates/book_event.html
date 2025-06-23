@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Event - My Events{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/book_event.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/book_event.js' %}"></script>
+{% endblock %}
+{% block content %}
+  <div class="booking-form">
+    <h2>Book: {{ event.title }}</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+         <a href="{% url 'form_success' %}" class="button">Confirm Booking</a>
+    </form>
+  </div>
+{% endblock %}

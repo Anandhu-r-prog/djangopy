@@ -1,0 +1,308 @@
+{% extends './base.html' %}
+{% load static %}
+ {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/homeindex.css' %}">
+ {% endblock extra_css %}
+
+{% block content %}
+ <section class="hero-section">
+    <div class="text-content">
+      <h1>Crafting Moments,<br><span style="color: blueviolet;">Celebrating Life</span></h1>
+      <p>Welcome to Our Events — your trusted partner for stunning, smooth, and unforgettable events. Whether it’s a wedding, birthday, or concert — we make it magic!</p>
+      <div class="hero-btns">
+        <a href="{% url 'myfile' %}" class="btn-primary">Explore Events</a>
+        <a href="{% url 'signup' %}" class="btn-secondary">Register now</a>
+      </div>
+    </div>
+    <div class="image-content">
+      <img src="{% static 'images/goodluck.jpeg' %}" alt="Event Hero Image" />
+    </div>
+  </section>
+  <section class="events-section">
+  <h2>Our Top Events</h2>
+  <div class="cards-container">
+   
+    <div class="event-card">
+      <img src="{% static 'images/wedding.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Wedding Celebration</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/birthday.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Birthday Celebrations</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/food.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Food fest</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/wedding1,jpeg.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Wedding</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/artexpo.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Art Expo!</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/engage.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Engagement</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/x mas.j.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Christmas</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/gala dinner.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Gala dinner</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/holi.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Holi Celebrations</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+    <img src="{% static 'images/wedding2.jpeg' %}" alt="A group of people celebrating together with colorful decorations and joyful expressions in a lively indoor venue. The environment is festive and vibrant. Banner text reads central celebrations. The emotional tone is cheerful and energetic.">
+    <div class="card-details">
+        <h3>centralcelebrations!</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+    </div>
+    </div><div class="event-card">
+      <img src="{% static 'images/wedding2.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Wedding Celebration</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/cherishday.jpeg' %}"alt="Event 1">
+      <div class="card-details">
+        <h3>cherishday</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/eventlaunch.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Event launch</h3>
+        <p>Make your big day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/sportlight.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Sportlight night</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/fusionfiesta.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>fusion fiesta!</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/gathering.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Gathering...!</h3>
+        <p>Make your big day with your partner you will make it as a unforgettable moments.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/memories.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Moment memories</h3>
+        <p>Make your day  with your day unforgettable with our all-in-one wedding packages, stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/blossom.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Winter</h3>
+        <p>Make your big day unforgettable with blossom vibes ...!stunning venues, and professional planning.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/wedding1,jpeg.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Wedding</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="{% static 'images/receptionevents.jpeg' %}" alt="Event 1">
+      <div class="card-details">
+        <h3>Receptions!</h3>
+        <p>It felt like magic — every detail perfectly in place, and our guests were wowed..</p>
+      </div>
+    </div>
+    
+   
+  </div>
+</section>
+<section id="loginsection">
+<div class="contact-section">
+    <div class="overlay">
+      <div class="content-container">
+        <div class="left-text">
+          <h1>LOOKING FOR THE MOST<br>CREATIVE & INNOVATIVE EVENT<br>PLANNERS IN KERALA?</h1>
+          <p>
+            Imagine celebrating the most special events of your life without worrying about a single thing. 
+            Melodia® Events is here to make your dream events come true! Our expert event management team 
+            offers professional event planning and management services in cities, villages, and small towns 
+            across Kerala, from south to north, using creative and innovative methods to plan and curate perfect, 
+            hassle-free celebrations that will captivate your attendees. Contact us today to bring your vision 
+            to life and create unforgettable memories!
+          </p>
+        </div>
+        <div class="right-form">
+          <h1 style="padding: 28px; text-align: center;">Create your sugession</h1> 
+         <form method="POST" action="{% url 'suggest' %}">
+          {% csrf_token %}
+           <input type="text" name="full_name" placeholder="Enter your Full Name" required />
+           <input type="tel" name="phone_number" placeholder="Enter your Phone Number" required />
+           <input type="email" name="email" placeholder="Enter your Email ID" required />
+           <textarea name="message" placeholder="Message" required></textarea>
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<section class="reviews-section">
+  <h2>What Our Customers Say</h2>
+  <div class="review-card">
+    <p>“A flawless experience from planning to execution. Everyone had a blast!”</p>
+    <span>- Nandana Rajan-</span>
+  </div>
+  <div class="review-card">
+    <p>“Their creativity and professionalism stood out. Would book again in a heartbeat!”</p>
+    <span>- Ashik p s-</span>
+  </div>
+  <div class="review-card">
+    <p>“Unmatched dedication and attention to detail. Loved every moment!”</p>
+    <span>- Sharmili -</span>
+  </div>
+  <div class="review-card">
+    <p>“It felt like magic — every detail perfectly in place, and our guests were wowed”</p>
+    <span>- Krishnapriya-</span>
+  </div>
+  <div class="review-card">
+    <p>“It felt like magic — every detail perfectly in place, and our guests were wowed.”</p>
+    <span>-Muhammed Farhan-</span>
+  </div>
+ <div class="review-card">
+    <p>“It felt like magic — every detail perfectly in place, and our guests were wowed.”</p>
+    <span>- Albin suresh-</span>
+  </div>
+  <div class="review-card">
+    <p>“It felt like magic — every detail perfectly in place, and our guests were wowed.”</p>
+    <span>- Aswin-</span>
+  </div>
+  <div class="review-card">
+    <p>“It felt like magic — every detail perfectly in place, and our guests were wowed.”</p>
+    <span>- Sandra k Chandran-</span>
+  </div>
+ 
+</section>
+
+<!-- <section class="more-info-section">
+  <p>From corporate functions to private get-togethers, My Events tailors every moment to perfection. We go beyond logistics — we tell stories, create memories, and deliver smiles.</p>
+  <button class="see-more-btn">See our Upcoming events</button>
+</section> -->
+<section class="more-info-section">
+  <p>
+    From corporate functions to private get-togethers, My Events tailors every moment to perfection.
+    We go beyond logistics — we tell stories, create memories, and deliver smiles.
+  </p>
+  <button class="see-more-btn" onclick="goToUpcomingEvents()">See our Upcoming events</button>
+</section>
+<script>
+  function goToUpcomingEvents() {
+    window.location.href = "{% url 'service' %}";
+  }
+</script>
+<footer class="custom-footer">
+  <div class="footer-overlay">
+    <div class="footer-container">
+      <h1 style="text-align: center;"> melodia Event Management</h1>
+      <p>
+        Planning a full event has never been easier! Melodia® Event Management, an ISO 9001:2015 Certified Event Management Company based in Kerala state, India, offers a wide range of services to make your events stress-free and memorable across Kerala. From premium corporate events and destination wedding planning to small-scale birthday parties and private gatherings, you can be sure we have it all covered. With offices in Kochi, Thrissur, Calicut, and Trivandrum, we also specialize in venue selections, booking, and hospitality services. We primarily serve Keralites, Malayalees, and those looking to plan destination events in Kerala. We exclusively operate within Kerala. Whether you are planning a destination wedding event or a local celebration in Kerala, India, Melodia® is here to help.
+      </p>
+      <div class="footer-column">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Venues</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SERVICES</h3>
+        <ul>
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Wedding Planner</a></li>
+          <li><a href="#">Music & Entertainment</a></li>
+          <li><a href="#">Private Parties</a></li>
+          <li><a href="#">Destination Wedding</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>OTHER LINKS</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cancellation and Refund Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>CONTACT INFO</h3>
+        <p>Melodia Event Management, T V Center,<br>
+          Kakkanad, Kochi, Kerala 682037</p>
+        <p>Melodia Event Management, Flamon Complex,<br>
+          Main Rd, Kuriachira, Thrissur, Kerala 680006</p>
+        <p>Melodia Event Management, Door No:VP 22/152ABC,<br>
+          Vazhakkad Panchayath, Oorkadavu, Po, Oorkadav, Akkod, Kozhikode, Kerala 673640</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="contact-info">
+        <span>&#9742; +91-859-001-0011</span>
+        <span>&#9993; melodiaeventmanagement@gmail.com</span>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock content %}
+

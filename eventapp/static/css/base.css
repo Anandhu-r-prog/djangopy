@@ -1,0 +1,91 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: transparent; /* Make it blend with body */
+  color: rgb(81, 2, 60);
+  backdrop-filter: blur(10px); /* Optional: add blur for glass effect */
+ 
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Horizontal navbar */
+.nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav .nav-links li {
+  position: relative;
+}
+
+.nav .nav-links a {
+  /* color: rgb(68, 3, 55); */
+  text-decoration: none;
+  padding: 10px 15px;
+  color: hsla(0, 0%, 5%, 0.793);
+  
+}
+
+/* Add arrow to Service link only */
+.nav-links .dropdown > a::after {
+  content: " ▼";
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #060660;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 10;
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: rgb(5, 5, 5);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgb(72, 176, 240);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Button style */
+.btn {
+  background-color: rgb(222, 28, 128);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
